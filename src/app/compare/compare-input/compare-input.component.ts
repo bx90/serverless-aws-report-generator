@@ -31,11 +31,11 @@ export class CompareInputComponent implements OnInit {
 
   onSubmit() {
     const data: CompareData = {
-      age: this.form.value.age as number,
-      height: this.form.value.height as number,
-      income: this.form.value.income as number
+      requestId: this.form.value.requestId as string
     };
-    this.compareService.onStoreData(data);
+    console.log(data.requestId);
+    const res: string = this.compareService.onStoreData(data);
+
   }
 
   onFetchStoredData() {
